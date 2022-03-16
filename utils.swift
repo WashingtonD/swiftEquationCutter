@@ -20,7 +20,7 @@ extension String{
 }
 
 enum type{
-    case digit, operation, number, identifier, varLetter;
+    case digit, operation, number, identifier, varLetter, error;
 }
 
 func transformEquation(mathLine: String) -> [(char: Character,type: type,position: Int)]{
@@ -90,10 +90,9 @@ func createParts(singleElems: [(char: Character,type: type,position: Int)])
             temp = ""
             lastChar = "@"
         default:
-            print("Wrong symbol")
+            result.append((String(tuple.char),type.error))
+            return result
         }
         }
-        
-        
      return result
 }
