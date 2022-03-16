@@ -9,6 +9,8 @@
 import Foundation
 
 
+
+/// It is better to use Array(StringName) syntax. This extension was created only in testing purposes.
 extension String{
     func divider() -> [Character]{
         var temp = [Character]()
